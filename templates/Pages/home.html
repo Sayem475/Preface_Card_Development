@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} Preface | Home {% endblock title %}
+{% block homeactive  %}active{% endblock homeactive  %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+    <!-- Slider -->
+    {% include './HomeComp/slider.html'%}
+	
+	<!-- Banner -->
+    {% include './HomeComp/categoryBanner.html'%}
+
+	<!-- WHY CHOOSE US  -->
+    {% include './HomeComp/chooseus.html'%}
+
+
+	<!-- HOW IT WORKS  -->
+    {% include './HomeComp/preWorks.html'%}
+	
+	<!-- Product -->
+    {% include './HomeComp/products.html'%}
+
+	<!-- Customer Review  -->
+    {% include './HomeComp/customerReview.html'%}
+	
+{% endblock body %}
+
+{% block script %}
+{% endblock script %}
