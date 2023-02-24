@@ -64,3 +64,7 @@ class EditProfile(View):
     def get(self, request):
         return render(request, 'User/editProfile.html')
 
+class UserLoginCard(View):
+    def get(self, request):
+        return render(request, 'User/userlogin.html')
+

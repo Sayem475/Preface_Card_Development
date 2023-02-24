@@ -20,4 +20,5 @@ urlpatterns = [
     path('/terms', Terms.as_view(), name='terms'),
     path('/userProfile', UserProfile.as_view(), name='userProfile'),
     path('/editProfile', EditProfile.as_view(), name='editProfile'),
+    path('/userlogin', UserLoginCard.as_view(), name='userlogin'),
 ]
