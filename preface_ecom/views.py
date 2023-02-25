@@ -68,3 +68,12 @@ class UserLoginCard(View):
     def get(self, request):
         return render(request, 'User/userlogin.html')
 
+class CardOnBoard(View):
+    def get(self, request):
+        return render(request, 'Pages/cardonboard.html')
+
+
+class ConfirmCard(View):
+    def get(self, request):
+        return render(request, 'Pages/confirmcard.html')
+

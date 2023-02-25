@@ -21,4 +21,6 @@ urlpatterns = [
     path('/userProfile', UserProfile.as_view(), name='userProfile'),
     path('/editProfile', EditProfile.as_view(), name='editProfile'),
     path('/userlogin', UserLoginCard.as_view(), name='userlogin'),
+    path('/cardonboard', CardOnBoard.as_view(), name='cardonboard'),
+    path('/confirmcard', ConfirmCard.as_view(), name='confirmcard'),
 ]

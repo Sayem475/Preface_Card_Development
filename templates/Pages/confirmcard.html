@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% load static %}
+{% block title %} Preface | Confirm Card {% endblock title %}
+{% block active  %}active{% endblock active  %}
+
+{% block css %}
+<style>
+      .activeCardbtn {
+    color: white;
+    background: red;
+    padding: 10px;
+    border-radius: 21px;
+    font-weight: bold;
+    font-size: 17px;
+    }
+    .activeCardbtn:hover {
+    color: black;
+    background: white;
+    padding: 10px;
+    border-radius: 21px;
+    font-weight: bold;
+    font-size: 17px;
+    }
+    .cardPagebody{
+        background: black;
+        color: white;
+    }
+    .cardPagebody h5{
+        margin-bottom: 8px;
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<!-- Title page -->
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url({% static 'images/bg-01.jpg'%});">
+    <h2 class="ltext-105 cl0 txt-center">
+        Active Card
+    </h2>
+</section>	
+    <section class="bg0 p-t-23 p-b-120 cardPagebody">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6 p-4">
+                    <h5><strong>Custome Name:</strong> Md Sayem Uddin</h5>
+                    <h5><strong>Order Id:</strong> 0001</h5>
+                    <h5><strong>Card Serial Number:</strong> SL09F932Y </h5>
+                    <button class="activeCardbtn mt-3">Card On Board</button>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+    </section>	
+{% endblock body %}
+
+{% block script %}
+{% endblock script %}
