@@ -41,6 +41,7 @@
             -o-transition: all 0.4s;
             -moz-transition: all 0.4s;
         }
+		
 		.animsition p{
 			font-size: 20px;
 		}
@@ -192,16 +193,14 @@
 		</div>
 
 		<!-- Header Mobile -->
-		<div class="wrap-header-mobile">
+		<div class="wrap-header-mobile text-center" style="background-color: black; color: white;">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="{% url 'home' %}"><img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO"></a>
+				<a href="{% url 'home' %}"><img src="{% static 'images/icons/prw.png'%}" alt="IMG-LOGO"></a>
 			</div>
-
-			<!-- Button show menu -->
 			<div class="btn-show-menu-mobile hamburger hamburger--squeeze ">
 				<span class="test">
-                    <a href="{% url 'shop' %}" >SHOP</a>
+                    <a href="{% url 'shop' %}" class="text-light">SHOP</a>
 				</span>
 			</div>
 		</div>
@@ -253,22 +252,27 @@
 				<h4 class="mt-4 font-weight-bold">Contact</h4>
 				<div class="contactbtn mt-3">
 					<div class="bg-black">
-						<div class="d-flex">
+						<div class="d-flex justify-content-between">
 							<div class="p-3"><i class="fa fa-phone mt-1"></i></div>
 							<div class="p-3"><a href="#">+880 1316522214</a></div>
+							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 					<div class=" bg-black mt-2">
-						<div class="d-flex">
+						<div class="d-flex justify-content-between">
 							<div class="p-3"><i class="fa fa-envelope mt-1"></i></div>
 							<div class="p-3"><a href="#">sayemuddin471@gmail.com</a></div>
+							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
+
 						</div>
 					</div>
 
 					<div class=" bg-black mt-2">
-						<div class="d-flex">
+						<div class="d-flex justify-content-between">
 							<div class="p-3"><i class="fa fa-map-marker mt-1"></i></div>
-							<div class="p-3"><a href="#">Fauzdarhat, Sitakunda, Chittagong</a></div>
+							<div class="p-3"><a href="#">North Salimpur, Fauzdarhat, Sitakunda, Chittagong</a></div>
+							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
+
 						</div>
 					</div>
 				</div>

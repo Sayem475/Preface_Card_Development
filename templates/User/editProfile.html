@@ -30,128 +30,151 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
 <!--===============================================================================================-->
 <style>
-        .test a {
-            font-family: Poppins-Medium;
-            font-size: 20px;
-			font-weight: bold;
-            color: #333;
-            padding: 5px 0px;
-            transition: all 0.4s;
-            -webkit-transition: all 0.4s;
-            -o-transition: all 0.4s;
-            -moz-transition: all 0.4s;
-        }
-        
-        .profileimage img{
-            height: 160px;
-            width: 160px;
-            border-radius: 50%;
-			border-color: #fff;
-        }
-        .profileimage{
-           /* display: inline-block; 
-            margin: 0 0px;*/
-            text-align: center;
-            margin-top: -50px;
-        }
-        .info-box {
-            background-color: gainsboro;
-            border-radius: 5px;
-        }
-		/* TAB BIO DATA INFORMATION */
-		.profile-info{
-			font-size: 18px;
-		}
-		.biodata p {
-			font-size:17px;
-		}
-		.pro-info{
-			font-size:17px;
-		}
-		.contact-btn .btn-text-size{
-			font-size: 18px;
-		}
-		.btn-success{
-			color:#fff;
-			background-color: #000263;
-			border-color: #000263;
-		}
-		.btn-danger{
-			color:#fff;
-			background-color: #af0010;
-			border-color:#af0010;
-		}
-		
-		/*button design */
-		.glow-on-hover {
-		width: 130px;
-		height: 45px;
-		border: none;
-		outline: none;
-		color: #fff;
-		background: #111;
-		cursor: pointer;
-		position: relative;
-		z-index: 0;
-		border-radius: 10px;
-		padding-top:10px;
+	.test a {
+		font-family: Poppins-Medium;
 		font-size: 20px;
+		font-weight: bold;
+		color: #333;
+		padding: 5px 0px;
+		transition: all 0.4s;
+		-webkit-transition: all 0.4s;
+		-o-transition: all 0.4s;
+		-moz-transition: all 0.4s;
 	}
 
-	.glow-on-hover:before {
-		content: '';
-		background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-		position: absolute;
-		top: -2px;
-		left:-2px;
-		background-size: 400%;
-		z-index: -1;
-		filter: blur(5px);
-		width: calc(100% + 4px);
-		height: calc(100% + 4px);
-		animation: glowing 20s linear infinite;
-		opacity: 0;
-		transition: opacity .3s ease-in-out;
-		border-radius: 10px;
+	.profileimage img{
+		height: 160px;
+		width: 160px;
+		border-radius: 50%;
+		border-color: #fff;
+	}
+	.profileimage{
+	   /* display: inline-block; 
+		margin: 0 0px;*/
+		text-align: center;
+		margin-top: -50px;
+	}
+	.info-box {
+		background-color: gainsboro;
+		border-radius: 5px;
 	}
 
-	.glow-on-hover:active {
-		color: #000
+	.editForm label{
+		font-size: 13px;
+		color: #b9b9b9;
+		letter-spacing: 1px;
 	}
-
-	.glow-on-hover:active:after {
-		background: transparent;
-	}
-
-	.glow-on-hover:hover:before {
-		opacity: 1;
-	}
-
-	.glow-on-hover:after {
-		z-index: -1;
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: #500000;
-		border:2px solid white;
-		left: 0;
-		top: 0;
-		border-radius: 10px;
-	}
-
-	@keyframes glowing {
-		0% { background-position: 0 0; }
-		50% { background-position: 400% 0; }
-		100% { background-position: 0 0; }
-	}
-
-	/* tabs design */
 	.infoanchor a{
-			color: #9e9e9e;
-			font-weight: bold;
-			font-size: larger;
-		}
+		color: #9e9e9e;
+		font-weight: bold;
+		font-size: larger;
+	}
+	
+	input[type=text] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 2px solid red;
+		background-color: #272626;
+		color: white;
+	}
+
+	input[type=text]:hover {
+		border-bottom: 2px solid white;
+	}
+
+	input[type=email]{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 2px solid red;
+		background-color: #272626;
+		color: white;
+	}
+
+	input[type=email]:hover {
+		border-bottom: 2px solid white;
+	}
+	
+	input[type=number]{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 2px solid red;
+		background-color: #272626;
+		color: white;
+	}
+
+	input[type=number]:hover {
+		border-bottom: 2px solid white;
+	}
+	input[type=date]{
+		width: 100%;
+		padding: 12px 3px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 2px solid red;
+		background-color: #272626;
+		color: white;
+	}
+
+	input[type=date]:hover {
+		border-bottom: 2px solid white;
+	}
+	textarea[type=text]{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 2px solid red;
+		background-color: #272626;
+		color: white;
+	}
+
+	textarea[type=text]:hover {
+		border-bottom: 2px solid white;
+	}
+
+	select {
+		width: 100%;
+		padding: 14px 20px;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 2px solid red;
+		background-color: #272626;
+		color: white;
+	}
+
+	select:hover {
+		border-bottom: 2px solid white;
+	}
+
+	button.linksBtn {
+		color: white;
+		background: red;
+		padding: 10px 30px 10px 30px;
+		border-radius: 25px;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	
+	button.linksBtn:hover {
+		color: black;
+		background: white;
+		padding: 10px 30px 10px 30px;
+		border-radius: 25px;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	
 </style>
 </head>
 <body class="animsition">
@@ -184,16 +207,14 @@
 		</div>
 
 		<!-- Header Mobile -->
-		<div class="wrap-header-mobile">
+		<div class="wrap-header-mobile text-center" style="background-color: black; color: white;">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="{% url 'home' %}"><img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO"></a>
+				<a href="{% url 'home' %}"><img src="{% static 'images/icons/prw.png'%}" alt="IMG-LOGO"></a>
 			</div>
-
-			<!-- Button show menu -->
 			<div class="btn-show-menu-mobile hamburger hamburger--squeeze ">
 				<span class="test">
-                    <a href="{% url 'shop' %}" >SHOP</a>
+                    <a href="{% url 'shop' %}" class="text-light">SHOP</a>
 				</span>
 			</div>
 		</div>
@@ -201,10 +222,10 @@
 
     <section class="pb-5 editForm" style="background: black; color: white;">
 		<div class="coverimage">
-			<img src="/images/slide-01.jpg" class="img-fluid responsive" alt="CoverImg">
+			<img src="{% static 'images/slide-01.jpg'%}" class="img-fluid responsive" alt="CoverImg">
 		</div>
 			<div class="container profileimage ">
-				<img src="/images/avatar-01.jpg" class="img-fluid img-thumbnail" alt="Profileimg"> 
+				<img src="{% static 'images/avatar-01.jpg'%}" class="img-fluid img-thumbnail" alt="Profileimg"> 
 			</div>
 	<form>
 		<div class="container mt-3 biodata p-4">
