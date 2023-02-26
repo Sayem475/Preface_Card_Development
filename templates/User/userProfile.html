@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>PREFACE | User Profile</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png'%}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/linearicons-v1.0.0/icon-font.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css'%}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css'%}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+<!--===============================================================================================-->
+<style>
+	 .test a {
+            font-family: Poppins-Medium;
+            font-size: 20px;
+			font-weight: bold;
+            color: #333;
+            padding: 5px 0px;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+        }
+		
+		.animsition p{
+			font-size: 20px;
+		}
+        
+        .profileimage img{
+            height: 160px;
+            width: 160px;
+            border-radius: 50%;
+			/* border-color: #fff;  */
+        }
+        .profileimage{
+			/* margin-left: 30px; */
+            margin-top: -50px;
+        }
+        .info-box {
+            background-color: gainsboro;
+            border-radius: 5px;
+        }
+		/* TAB BIO DATA INFORMATION */
+		.profile-info{
+			font-size: 18px;
+		}
+		.biodata p {
+			font-size:20px;
+		}
+		.pro-info{
+			font-size:20px;
+		}
+		.contact-btn .btn-text-size{
+			font-size: 18px;
+		}
+		.btn-success{
+			color:#fff;
+			background-color: #000263;
+			border-color: #000263;
+		}
+		.btn-danger{
+			color:#fff;
+			background-color: #af0010;
+			border-color:#af0010;
+		}
+		
+		
+
+	/* tabs design */
+	.infoanchor a{
+			color: #9e9e9e;
+			font-weight: bold;
+			font-size: larger;
+		}
+
+		a.mybtn {
+			font-weight: bold;
+			font-size: 18px;
+			padding: 11px;
+			background: black;
+			color: white;
+			border-radius: 25px;
+			border: 2px solid white;
+			padding-left: 22px;
+			padding-right: 22px;
+		}
+		a.mybtn:hover {
+			font-weight: bold;
+			font-size: 18px;
+			padding: 11px;
+			background: rgb(255, 253, 253);
+			color: rgb(0, 0, 0);
+			border-radius: 25px;
+			padding-left: 22px;
+			padding-right: 22px;
+		}
+		a.callbtn {
+			background: black;
+			padding: 5px 10px 5px 10px;
+			border: 2px solid white;
+			font-size: 20px;
+			color: white;
+			border-radius: 8px;
+			/* margin-left: 20px; */
+			text-align: left;
+		}
+		a.mailbtn {
+			background: black;
+			padding: 5px 10px 5px 10px;
+			border: 2px solid white;
+			font-size: 20px;
+			color: white;
+			border-radius: 8px;
+			/* margin-left: 20px; */
+			text-align: left;
+		}
+		.contactbtn .bg-black {
+			background: black;
+			border-radius: 10px;
+		}
+		.contactbtn .bg-black :hover {
+			background: white;
+			color: black;
+			border-radius: 10px;
+		}
+		.contactbtn a{
+			color:white;
+			font-size: 18px;
+		}
+		.contactbtn i{
+			font-size: 20px;
+		}
+		.skills p{
+			font-size: 18px;
+			color:#9e9e9e;
+		}
+		.dot {
+			height: 10px;
+			width: 10px;
+			background-color: #9e9e9e;
+			border-radius: 50%;
+			display: inline-block;
+			}
+</style>
+</head>
+<body class="animsition">
+    <!-- Header -->
+	<header class="header-v2" >
+		<!-- Header desktop -->
+		<div class="container-menu-desktop trans-03">
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop p-l-45">
+					
+					<!-- Logo desktop -->		
+					<a href="" class="logo">
+						<img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li class="active-menu">
+								<a href="">Home</a>
+							</li>
+
+							<li class="label1" data-label1="new">
+								<a href="">Shop</a>
+							</li>
+						</ul>
+					</div>		
+				</nav>
+			</div>	
+		</div>
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile text-center" style="background-color: black; color: white;">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href=""><img src="{% static 'images/icons/prw.png'%}" alt="IMG-LOGO"></a>
+			</div>
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze ">
+				<span class="test">
+                    <a href="" class="text-light">SHOP</a>
+				</span>
+			</div>
+		</div>
+	</header>
+	<section class="pb-5" style="background-color: black; color: whitesmoke;">
+        
+		<!-- COVER PHOTO -->
+        <div class="coverimage">
+            <img src="{% static 'images/slide-01.jpg'%}" class="img-fluid responsive" alt="CoverImg"> 
+        </div>
+
+		<!-- PROFILE PICTURE  -->
+		<div class="bg-dark">
+			<div class="container profileimage">
+				<img src="{% static 'images/avatar-01.jpg'%}" class="img-fluid img-thumbnail" alt="Profileimg"> 
+			</div>
+		</div>
+		<!-- About INFORMATION  -->
+		<div>
+			<!-- NAME AND DESIGNATION INFO  -->
+			<div class="p-3 bg-dark">
+				<h5 style="font-size:25px; font-weight: bold;">Md Sayem Uddin</h5>
+				<p>Full-stack web Developer ( React JS, Python, Djanog)</p>
+				<div class="d-flex  mt-3">
+					<div class="p-2">
+						<a href="#" class="mybtn">Save Contact</a>
+					</div>
+					<div class="p-2">
+						<a href="#" class="mybtn" >Connect</a>
+					</div>
+				</div>
+			</div>
+			<!-- ABOUT  -->
+			<div class="p-3 bg-dark mt-2">
+				<h4 class="mt-4 font-weight-bold">About</h4>
+				<p class="mt-3">Hello my name is sayem uddin and i am a web developer currently working in a software company called techmelba international.</p>
+				<div class="d-flex  mt-3">
+					<div class="p-2">
+						<a href="#" class="mybtn"><i class="fa fa-phone"></i> Call Now</a>
+					</div>
+					<div class="p-2">
+						<a href="#" class="mybtn" ><i class="fa fa-envelope"></i> 
+							Email</a>
+					</div>
+				</div>
+			</div>
+			<!-- CONTACT  -->
+			<div class="p-3 bg-dark mt-2">
+				<h4 class="mt-4 font-weight-bold">Contact</h4>
+				<div class="contactbtn mt-3">
+					<div class="bg-black">
+						<div class="d-flex justify-content-between">
+							<div class="p-3"><i class="fa fa-phone mt-1"></i></div>
+							<div class="p-3"><a href="#">+880 1316522214</a></div>
+							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
+						</div>
+					</div>
+					<div class=" bg-black mt-2">
+						<div class="d-flex justify-content-between">
+							<div class="p-3"><i class="fa fa-envelope mt-1"></i></div>
+							<div class="p-3"><a href="#">sayemuddin471@gmail.com</a></div>
+							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
+
+						</div>
+					</div>
+
+					<div class=" bg-black mt-2">
+						<div class="d-flex justify-content-between">
+							<div class="p-3"><i class="fa fa-map-marker mt-1"></i></div>
+							<div class="p-3"><a href="#">North Salimpur, Fauzdarhat, Sitakunda, Chittagong</a></div>
+							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- SOCIAL LINKS  -->
+		<div class="container mt-2 biodata bg-dark p-3">
+			<div class="container contact-btn">
+				<div class="container social-links mt-2 sec-relate-product">
+					<div class="p-t-5 p-b-5">
+						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-instagram"></i>
+						</a>
+
+						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-pinterest-p"></i>
+						</a>
+						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-youtube"></i>
+						</a>
+						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-google"></i>
+						</a>
+						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-twitter"></i>
+						</a>
+						<!-- <a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-globe"></i>
+						</a> -->
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<!-- PERSONAL & PROFESSIONAL INFORMATION  -->
+		<div class="container p-4 bg-dark mt-2">
+			<ul class="nav nav-tabs infoanchor" id="myTab" role="tablist">
+				<li class="nav-item">
+				  <a class="nav-link active tabdesign" id="professional-tab" data-toggle="tab" href="#professional" role="tab" aria-controls="professional" aria-selected="true">Professional</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link tabdesign" id="skills-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="skills" aria-selected="false">Skills</a>
+				</li>
+			  </ul>
+			  <div class="tab-content p-4" id="myTabContent">
+				
+				<!-- PROFESSIONAL INFORMATION  -->
+				<div class="tab-pane fade show active" id="professional" role="tabpanel" aria-labelledby="professional-tab">
+					<div class="mt-2 mb-2">
+						<h5 class="font-weight-bold">Full-stack Developer</h5>
+						<h6>Techmelba International</h6>
+						<p style="font-size: 15px; color:#9e9e9e"> 
+							<span>May 2020 - Continuing . </span> 
+							<span> House 417, Road 07, Baridhara DOHS, Dhaka</span>
+						</p>
+					</div>
+
+					<div class="mt-2 mb-2">
+						<h5 class="font-weight-bold">Frontend Developer</h5>
+						<h6>Gothi Technologies</h6>
+						<p style="font-size: 15px; color:#9e9e9e"> 
+							<span>Feb 2019 - Apr 2020 . </span> 
+							<span> Muhammadpur, Dhaka</span>
+						</p>
+					</div>
+				</div>
+
+				<!-- SKILLS INFORMATION  -->
+				<div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+					<div class="skills">
+						<p class="mb-1"> 
+							<span class="dot"></span> 
+							Problem Solving
+						</p>
+						<p class="mb-1"> 
+							<span class="dot"></span> 
+							Web Designing
+						</p>
+						<p class="mb-1"> 
+							<span class="dot"></span>  
+							Software Development
+						</p>
+						<p class="mb-1"> 
+							<span class="dot"></span>  
+							Graphics Design
+						</p>
+					</div>
+				</div>
+			  </div>
+		</div>
+
+		<!-- <div class="container user-video mt-4">
+			<iframe width="100%" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+			</iframe>
+		</div> -->
+
+		<div class="container mt-4 text-center">
+			<h5 class="font-weight-bold text-uppercase"> </h5>
+			<h5 class="mt-2">  <a href="{% static 'file/elitesports.pdf'%}"> Click here </a>to view Files or Resume.</p>
+		</div>
+
+		<div class="container mt-5 text-center">
+			<a href="{% url 'editProfile' %}" class="btn btn-danger">Edit Profile</a>
+		</div>
+	
+    </section>
+
+	<!-- Footer -->
+	<footer class="p-t-50 p-b-10 text-center" style="background-color: black;">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-sm-6 col-lg-3 p-b-10">
+					<h4 class="stext-301 cl0 p-b-30">
+						PREFACE
+					</h4>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+<!--===============================================================================================-->	
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/animsition/js/animsition.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js'%}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select2/select2.min.js'%}"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/MagnificPopup/jquery.magnific-popup.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js'%}"></script>
+	
+</body>
+</html>
