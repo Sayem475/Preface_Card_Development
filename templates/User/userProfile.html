@@ -209,21 +209,21 @@
         
 		<!-- COVER PHOTO -->
         <div class="coverimage">
-            <img src="{% static 'images/slide-01.jpg'%}" class="img-fluid responsive" alt="CoverImg"> 
+            <img src="http://127.0.0.1:8000/media/{{ data.cover_picture }}" class="img-fluid responsive" alt="CoverImg"> 
         </div>
 
 		<!-- PROFILE PICTURE  -->
 		<div class="bg-dark">
 			<div class="container profileimage">
-				<img src="{% static 'images/avatar-01.jpg'%}" class="img-fluid img-thumbnail" alt="Profileimg"> 
+				<img src="http://127.0.0.1:8000/media/{{ data.profile_picture }}" class="img-fluid img-thumbnail" alt="Profileimg"> 
 			</div>
 		</div>
 		<!-- About INFORMATION  -->
 		<div>
 			<!-- NAME AND DESIGNATION INFO  -->
 			<div class="p-3 bg-dark">
-				<h5 style="font-size:25px; font-weight: bold;">Md Sayem Uddin</h5>
-				<p>Full-stack web Developer ( React JS, Python, Djanog)</p>
+				<h5 style="font-size:25px; font-weight: bold;">{{ data.name }}</h5>
+				<p>{{ data.bio }}</p>
 				<div class="d-flex  mt-3">
 					<div class="p-2">
 						<a href="#" class="mybtn">Save Contact</a>
@@ -236,7 +236,7 @@
 			<!-- ABOUT  -->
 			<div class="p-3 bg-dark mt-2">
 				<h4 class="mt-4 font-weight-bold">About</h4>
-				<p class="mt-3">Hello my name is sayem uddin and i am a web developer currently working in a software company called techmelba international.</p>
+				<p class="mt-3">{{ data.about }}</p>
 				<div class="d-flex  mt-3">
 					<div class="p-2">
 						<a href="#" class="mybtn"><i class="fa fa-phone"></i> Call Now</a>
@@ -254,14 +254,14 @@
 					<div class="bg-black">
 						<div class="d-flex justify-content-between">
 							<div class="p-3"><i class="fa fa-phone mt-1"></i></div>
-							<div class="p-3"><a href="#">+880 1316522214</a></div>
+							<div class="p-3"><a href="#">{{ data.phone_number }}</a></div>
 							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 					<div class=" bg-black mt-2">
 						<div class="d-flex justify-content-between">
 							<div class="p-3"><i class="fa fa-envelope mt-1"></i></div>
-							<div class="p-3"><a href="#">sayemuddin471@gmail.com</a></div>
+							<div class="p-3"><a href="#">{{ data.email }}</a></div>
 							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
 
 						</div>
@@ -270,7 +270,7 @@
 					<div class=" bg-black mt-2">
 						<div class="d-flex justify-content-between">
 							<div class="p-3"><i class="fa fa-map-marker mt-1"></i></div>
-							<div class="p-3"><a href="#">North Salimpur, Fauzdarhat, Sitakunda, Chittagong</a></div>
+							<div class="p-3"><a href="#">{{ data.address }}</a></div>
 							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
 
 						</div>
