@@ -209,13 +209,13 @@
         
 		<!-- COVER PHOTO -->
         <div class="coverimage">
-            <img src="http://127.0.0.1:8000/media/{{ data.cover_picture }}" class="img-fluid responsive" alt="CoverImg"> 
+            <img src="/media/{{ data.cover_picture }}" class="img-fluid responsive" alt="CoverImg"> 
         </div>
 
 		<!-- PROFILE PICTURE  -->
 		<div class="bg-dark">
 			<div class="container profileimage">
-				<img src="http://127.0.0.1:8000/media/{{ data.profile_picture }}" class="img-fluid img-thumbnail" alt="Profileimg"> 
+				<img src="/media/{{ data.profile_picture }}" class="img-fluid img-thumbnail" alt="Profileimg"> 
 			</div>
 		</div>
 		<!-- About INFORMATION  -->
@@ -239,10 +239,10 @@
 				<p class="mt-3">{{ data.about }}</p>
 				<div class="d-flex  mt-3">
 					<div class="p-2">
-						<a href="#" class="mybtn"><i class="fa fa-phone"></i> Call Now</a>
+						<a href="tel:{{ data.phone_number }}" class="mybtn"><i class="fa fa-phone"></i> Call Now</a>
 					</div>
 					<div class="p-2">
-						<a href="#" class="mybtn" ><i class="fa fa-envelope"></i> 
+						<a href="mailto:{{ data.email }}" class="mybtn" ><i class="fa fa-envelope"></i> 
 							Email</a>
 					</div>
 				</div>
@@ -315,17 +315,17 @@
 		<!-- PERSONAL & PROFESSIONAL INFORMATION  -->
 		<div class="container p-4 bg-dark mt-2">
 			<ul class="nav nav-tabs infoanchor" id="myTab" role="tablist">
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 				  <a class="nav-link active tabdesign" id="professional-tab" data-toggle="tab" href="#professional" role="tab" aria-controls="professional" aria-selected="true">Professional</a>
 				</li>
 				<li class="nav-item">
 				  <a class="nav-link tabdesign" id="skills-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="skills" aria-selected="false">Skills</a>
-				</li>
+				</li> -->
 			  </ul>
 			  <div class="tab-content p-4" id="myTabContent">
 				
 				<!-- PROFESSIONAL INFORMATION  -->
-				<div class="tab-pane fade show active" id="professional" role="tabpanel" aria-labelledby="professional-tab">
+				<!-- <div class="tab-pane fade show active" id="professional" role="tabpanel" aria-labelledby="professional-tab">
 					<div class="mt-2 mb-2">
 						<h5 class="font-weight-bold">Full-stack Developer</h5>
 						<h6>Techmelba International</h6>
@@ -343,10 +343,10 @@
 							<span> Muhammadpur, Dhaka</span>
 						</p>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- SKILLS INFORMATION  -->
-				<div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+				<!-- <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
 					<div class="skills">
 						<p class="mb-1"> 
 							<span class="dot"></span> 
@@ -365,7 +365,7 @@
 							Graphics Design
 						</p>
 					</div>
-				</div>
+				</div> -->
 			  </div>
 		</div>
 
@@ -376,11 +376,11 @@
 
 		<div class="container mt-4 text-center">
 			<h5 class="font-weight-bold text-uppercase"> </h5>
-			<h5 class="mt-2">  <a href="{% static 'file/elitesports.pdf'%}"> Click here </a>to view Files or Resume.</p>
+			<h5 class="mt-2">  <a href=""> Click here </a>to view Files or Resume.</p>
 		</div>
 
 		<div class="container mt-5 text-center">
-			<a href="{% url 'editProfile' %}" class="btn btn-danger">Edit Profile</a>
+			<a href="http://127.0.0.1:8000/profile/edit/{{ data.id }}" class="btn btn-danger">Edit Profile</a>
 		</div>
 	
     </section>

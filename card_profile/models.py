@@ -10,6 +10,7 @@ class CardUser(models.Model):
     address = models.CharField(max_length=400, null=True, blank=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/')
     cover_picture = models.ImageField(upload_to='cover_pictures')
+    card_linked = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'card_profile',
+    'profile_login',
 ]
 
 MIDDLEWARE = [
