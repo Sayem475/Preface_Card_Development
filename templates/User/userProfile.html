@@ -28,8 +28,21 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+	<link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
 <!--===============================================================================================-->
 <style>
+	.socialicons-designs{
+			font-size: 25px;
+			background: white;
+			color:black;
+			padding: 8px 12px 8px 12px;
+			border-radius: 10px;
+		}
+		.socialicons-designs:hover{
+			background-color: black;
+			color:white;
+		}
 	 .test a {
             font-family: Poppins-Medium;
             font-size: 20px;
@@ -252,27 +265,23 @@
 				<h4 class="mt-4 font-weight-bold">Contact</h4>
 				<div class="contactbtn mt-3">
 					<div class="bg-black">
-						<div class="d-flex justify-content-between">
+						<div class="d-flex">
 							<div class="p-3"><i class="fa fa-phone mt-1"></i></div>
 							<div class="p-3"><a href="#">+880 1316522214</a></div>
-							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
 						</div>
 					</div>
 					<div class=" bg-black mt-2">
-						<div class="d-flex justify-content-between">
+						<div class="d-flex">
 							<div class="p-3"><i class="fa fa-envelope mt-1"></i></div>
 							<div class="p-3"><a href="#">sayemuddin471@gmail.com</a></div>
-							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
-
+							<!-- <div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div> -->
 						</div>
 					</div>
 
 					<div class=" bg-black mt-2">
-						<div class="d-flex justify-content-between">
-							<div class="p-3"><i class="fa fa-map-marker mt-1"></i></div>
+						<div class="d-flex">
+							<div class="p-3"><i class="fa fa-map-marker mt-1 pl-2"></i></div>
 							<div class="p-3"><a href="#">North Salimpur, Fauzdarhat, Sitakunda, Chittagong</a></div>
-							<div class="p-3"><a href="#"><i class="fa fa-angle-right text-light text-right" aria-hidden="true"></i></a></div>
-
 						</div>
 					</div>
 				</div>
@@ -282,7 +291,34 @@
 		<div class="container mt-2 biodata bg-dark p-3">
 			<div class="container contact-btn">
 				<div class="container social-links mt-2 sec-relate-product">
-					<div class="p-t-5 p-b-5">
+							<div class="owl-carousel  owl-theme">
+								<div class="item">
+									<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+										<i class="fa fa-facebook socialicons-designs"></i>
+									</a>
+								</div>
+								<div class="item">
+									<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+										<i class="fa fa-instagram socialicons-designs"></i>
+									</a>
+								</div>
+								<div class="item">
+									<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+										<i class="fa fa-pinterest-p socialicons-designs"></i>
+									</a>
+								</div>
+								<div class="item">
+									<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+										<i class="fa fa-youtube socialicons-designs"></i>
+									</a>
+								</div>
+								<div class="item">
+									<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+										<i class="fa fa-google socialicons-designs"></i>
+									</a>
+								</div>
+							</div>
+					<!-- <div class="p-t-5 p-b-5">
 						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-facebook"></i>
 						</a>
@@ -303,11 +339,10 @@
 						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-twitter"></i>
 						</a>
-						<!-- <a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
+						<a href="#" class="fs-28 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-globe"></i>
-						</a> -->
-					</div>
-					
+						</a>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -412,6 +447,8 @@
 <!--===============================================================================================-->
 	<script src="{% static 'vendor/bootstrap/js/popper.js'%}"></script>
 	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+	<script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+
 <!--===============================================================================================-->
 	<script src="{% static 'vendor/select2/select2.min.js'%}"></script>
 	<script>
@@ -443,6 +480,29 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="{% static 'js/main.js'%}"></script>
+	<script>
+		$(document).ready(function(){
+			$('.owl-carousel').owlCarousel({
+				loop:true,
+				margin:10,
+				nav:false,
+				autoplay:true,
+				autoplayTimeout:2000,
+				autoplayHoverPause:true,
+				responsive:{
+					0:{
+						items:5
+					},
+					600:{
+						items:5
+					},
+					1000:{
+						items:5
+					}
+				}
+			})
+		});
+	</script>
 	
 </body>
 </html>
