@@ -157,7 +157,7 @@
 		border-bottom: 2px solid white;
 	}
 
-	button.linksBtn {
+	.linksBtn {
 		color: white;
 		background: red;
 		padding: 10px 30px 10px 30px;
@@ -166,7 +166,7 @@
 		font-weight: bold;
 	}
 	
-	button.linksBtn:hover {
+	.linksBtn:hover {
 		color: black;
 		background: white;
 		padding: 10px 30px 10px 30px;
@@ -185,23 +185,50 @@
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop p-l-45">
 					
+					<!-- Logo desktop -->		
+					
+						<img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li class="active-menu">
+								
+							</li>
+
+							<li class="label1" data-label1="new">
+								
+							</li>
+						</ul>
+					</div>		
 				</nav>
 			</div>	
 		</div>
 
 		<!-- Header Mobile -->
 		<div class="wrap-header-mobile text-center" style="background-color: black; color: white;">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				
+			</div>
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze ">
+				<span class="test">
+                    
+				</span>
+			</div>
 		</div>
 	</header>
 
     <section class="pb-5 editForm" style="background: black; color: white;">
 		<div class="coverimage">
-			<img src="{% static 'images/slide-01.jpg'%}" class="img-fluid responsive" alt="CoverImg">
+			<img src="/media/{{ data.cover_picture }}" class="img-fluid responsive" alt="CoverImg">
 		</div>
 			<div class="container profileimage ">
-				<img src="{% static 'images/avatar-01.jpg'%}" class="img-fluid img-thumbnail" alt="Profileimg"> 
+				<img src="/media/{{ data.profile_picture }}" class="img-fluid img-thumbnail" alt="Profileimg"> 
 			</div>
-	<form>
+	<form action="/profile/edit/{{ data.id }}" method="post">
+		{% csrf_token %}
 		<div class="container mt-3 biodata p-4">
 			<div class="form-group">
 				<label for="coverphoto">Cover Photo:</label>
@@ -217,80 +244,63 @@
 
 			<div class="form-group">
 				<label for="name">Username</label>
-				<input type="text" id="username" value="Md Sayem Uddin">
+				<input type="text" name="name" id="username" value="{{ data.name }}">
 			</div>
 
 			<div class="form-group">
 				<label for="designation">Designation</label>
-				<input type="text" id="designation" value="Sr. Software Engineer">
+				<input type="text" id="designation" name="designation" value="{{ data.designation }}">
 			</div>
 
 			<div class="form-group">
 				<label for="mobileno">Mobile</label>
-				<input type="number" id="phonenumber" name="num" value="01316522214">
+				<input type="number" id="phonenumber" name="phone_number" value="{{ data.phone_number }}">
 			</div>
 
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="email" id="email" value="sayemuddin471@gmail.com">
+				<input type="email" id="email" name="email" value="{{ data.email }}">
 			</div>
 
 			<div class="form-group">
 				<label for="bio">Biography</label>
-				<textarea type="text" rows="3" id="userbio">Hello my name is sayem uddin and i am a web developer currently working in a software company called techmelba international.</textarea>
+				<textarea type="text" rows="3" name="about" id="userbio">{{ data.about }}</textarea>
 			</div>
 
 			<div class="form-group">
 				<label for="address">Address</label>
-				<textarea type="text" rows="3" id="userbio">North Salimpur, Fauzdarhat, Sitakunda, Chattogram</textarea>
+				<textarea type="text" name="address" rows="3" id="userbio">{{ data.address }}</textarea>
 			</div>
 
 
-			<!-- Social Links  -->
-			<div class="mt-4">
-				<h5 class="m-t-40 mb-4">Social Links</h5>
-				<div class="inlineFiled">
-					<div class="d-flex justify-content-start">
-						<div class="p-2">
-							<label for="socialLinks">Social</label>
-							<select id="sname" name="sname">
-								<option value="facebook">facebook</option>
-								<option value="twitter">Twitter</option>
-								<option value="snapChat">SnapChat</option>
-								<option value="youtube">Youtube</option>
-							</select>
-						</div>
-						<div class="p-2 text-right">
-							<label for="name">Links</label>
-							<input type="text" value="https://www.facebook.com/sayem.sam">
-							<a href="#" type="button" class="text-light mr-2"><i class="fa fa-eye" style="font-size:20px;"></i></a>
-							<a href="#" type="button" class="text-light ml-2"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="inlineFiled">
-					<div class="d-flex justify-content-start">
-						<div class="p-2">
-							<label for="socialLinks">Social</label>
-							<select id="sname" name="sname">
-								<option value="facebook">facebook</option>
-								<option value="twitter">Twitter</option>
-								<option value="snapChat">SnapChat</option>
-								<option value="youtube">Youtube</option>
-							</select>
-						</div>
-						<div class="p-2 text-right">
-							<label for="name">Links</label>
-							<input type="text" value="https://www.facebook.com/sayem.sam">
-							<a href="#" type="button" class="text-light mr-2"><i class="fa fa-eye" style="font-size:20px;"></i></a>
-							<a href="#" type="button" class="text-light font-weight-bold ml-2"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a>
+				<!-- Social Links  -->
+				<div class="mt-4">
+					<h5 class="m-t-40 mb-4">Social Links</h5>
+					<div class="socialWrapper">
+						<div class="inlineFiled social_parentDiv">
+							<div class="d-flex justify-content-start ">
+								<div class="p-2">
+									<label for="socialLinks">Social</label>
+									<select id="sname" name="sname">
+										<option value="facebook">facebook</option>
+										<option value="twitter">Twitter</option>
+										<option value="snapChat">SnapChat</option>
+										<option value="youtube">Youtube</option>
+									</select>
+								</div>
+								<div class="p-2 text-right">
+									<label for="name">Links</label>
+									<input type="text" value="https://www.facebook.com/sayem.sam">
+									<!-- <a href="#" type="button" class="text-light mr-2"><i class="fa fa-eye" style="font-size:20px;"></i></a>
+									<a href="#" type="button" class="text-light ml-2"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a> -->
+								</div>
+							</div>
 						</div>
 					</div>
-
+						
 					<div class="container mt-4 text-right">
-						<button class="linksBtn">Add Links</button>
+						<a href="javascript:void(0);" class="linksBtn" id="socialAddMore">Add Links</a>
 					</div>
-					
 				</div>
 			</div> 
 			
@@ -306,8 +316,8 @@
 				  <div class="tab-content p-4" id="myTabContent">
 					<!-- PROFESSIONAL INFORMATION  -->
 					<div class="tab-pane fade show active" id="professional" role="tabpanel" aria-labelledby="professional-tab">
-						<div class="proinline">
-							<div class="mt-2 mb-2" id="proInline">
+						<div class="profwrapper">
+							<div class="mt-2 mb-2 profParentDiv">
 								<label for="cmpDesignation">Responsibilty</label>
 								<input type="text" value="Full-stack Developer">
 
@@ -318,11 +328,11 @@
 									<div class="d-flex justify-content-start">
 										<div class="p-1">
 											<label for="date">From</label>
-											<input type="date">
+											<input type="date" class="form-control">
 										</div>
 										<div class="p-1">
 											<label for="date">To</label>
-											<input type="date">
+											<input type="date" class="form-control">
 										</div>
 									</div>
 								</div>
@@ -330,19 +340,22 @@
 								<textarea type="text" name="location"  cols="30" rows="3">House 417, Road 07, Baridhara DOHS, Dhaka</textarea>
 							</div>
 						</div>
-						<div class="container text-right">
-							<button class="linksBtn mt-4 ">Add More</button>
+						
+						<div class="container text-right mt-4">
+							<a href="javascript:void(0);" class="linksBtn mt-4" id="AddMoreProf">Add More</a>
 						</div>
 					</div>
 	
 					<!-- SKILLS INFORMATION  -->
 					<div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
-						<div class="skills">
-							<label for="skName">Skills</label>
-							<input type="text" value="Web Development">
+						<div class="skillswrapper">
+							<div class="skills">
+								<label for="skName">Skills</label>
+								<input type="text" value="Web Development">
+							</div>
 						</div>
-						<div class="container text-right">
-							<button class="linksBtn mt-4">Add Skills</button>
+						<div class="container text-right mt-4">
+							<a href="javascript:void(0);" class="linksBtn mt-4" id="skillAddMore">Add Skills</a>
 						</div>
 					</div>
 				  </div>
@@ -430,6 +443,77 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="{% static 'js/main.js'%}"></script>
+	<!-- SOCIAL LINKS JQUERY INLINE  -->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var maxField = 10; //Input fields increment limitation
+		var addSocialButton = $('#socialAddMore'); //Add button selector
+		var socialwrapper = $('.socialWrapper'); //Input field wrapper
+		var socialFieldsHTML = '<div class="inlineFiled social_parentDiv"><div class="d-flex justify-content-start"><div class="p-2"><label for="socialLinks">Social</label><select id="sname" name="sname"><option value="facebook">facebook</option><option value="twitter">Twitter</option><option value="snapChat">SnapChat</option><option value="youtube">Youtube</option></select></div><div class="p-2 text-right"><label for="name">Links</label><input type="text" value="https://www.facebook.com/sayem.sam"><a href="#" type="button" class="text-light mr-2"><i class="fa fa-eye" style="font-size:20px;"></i></a><a href="javascript:void(0);" class="text-light font-weight-bold removeSocial_button ml-2"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a></div></div></div>'; //New input field html 
+		var x = 1; //Initial field counter is 1
+		
+		//Once add button is clicked
+		$(addSocialButton).click(function(){
+			//Check maximum number of input fields
+			if(x < maxField){ 
+				x++; //Increment field counter
+				$(socialwrapper).append(socialFieldsHTML); //Add field html
+			}
+		});
+		
+		//Once remove button is clicked
+		$(socialwrapper).on('click', '.removeSocial_button', function(e){
+			e.preventDefault();
+			$(this).closest('.social_parentDiv').remove(); //Remove field html
+			x--; //Decrement field counter
+		});
+	});
+	</script>
+	<!-- SOCIAL LINKS JQUERY INLINE  -->
+
+	<!-- PROFESSIONAL LINKS JQUERY INLINE  -->
+	<script type="text/javascript">
+	$(document).ready(function(){
+			var maxField = 10; 
+			var addProfButton = $('#AddMoreProf');
+			var profwrap = $('.profwrapper'); 
+			var profFieldHTML = '<hr><div class="mt-2 mb-2 profParentDiv"><label for="cmpDesignation">Responsibilty</label><input type="text" value="Full-stack Developer"><label for="cmpName">Company</label><input type="text" value="Techmelba International"><div><div class="d-flex justify-content-start"><div class="p-1"><label for="date">From</label><input type="date"></div><div class="p-1"><label for="date">To</label><input type="date"></div></div></div><label for="location">Location</label><textarea type="text" name="location"  cols="30" rows="3">House 417, Road 07, Baridhara DOHS, Dhaka</textarea><a href="javascript:void(0);" class="removeProfButton text-light font-weight-bold" style="font-size: 20px;"><i class="fa fa-trash-o"></i></a></div>';
+			var x = 1; 
+			$(addProfButton).click(function(){
+				if(x < maxField){ 
+					x++; 
+					$(profwrap).append(profFieldHTML);
+				}
+			});
+			$(profwrap).on('click', '.removeProfButton', function(e){
+				e.preventDefault();
+				$(this).closest('.profParentDiv').remove(); 
+				x--; 
+			});
+		});
+	</script>
+
+	<!-- Skills LINKS JQUERY INLINE  -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var maxField = 10; 
+			var addSkillButton = $('#skillAddMore');
+			var sw = $('.skillswrapper'); 
+			var skillFieldHTML = '<div class="skills"><label for="skName">Skills</label><input type="text" value="Web Development"><a href="javascript:void(0);" class="text-light font-weight-bold removeSkillDiv"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a></div>';
+			var x = 1; 
+			$(addSkillButton).click(function(){
+				if(x < maxField){ 
+					x++; 
+					$(sw).append(skillFieldHTML);
+				}
+			});
+			$(sw).on('click', '.removeSkillDiv', function(e){
+				e.preventDefault();
+				$(this).closest('.skills').remove(); 
+				x--; 
+			});
+		});
+		</script>
 	
 </body>
 </html>

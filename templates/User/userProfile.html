@@ -379,9 +379,11 @@
 			<h5 class="mt-2">  <a href=""> Click here </a>to view Files or Resume.</p>
 		</div>
 
-		<div class="container mt-5 text-center">
-			<a href="http://127.0.0.1:8000/profile/edit/{{ data.id }}" class="btn btn-danger">Edit Profile</a>
-		</div>
+		{% if auth %}
+			<div class="container mt-5 text-center">
+				<a href="http://127.0.0.1:8000/profile/edit/{{ data.id }}" class="btn btn-danger">Edit Profile</a>
+			</div>
+		{% endif %}
 	
     </section>
 
