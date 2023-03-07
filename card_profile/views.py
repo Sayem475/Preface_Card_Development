@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from . import models
 from django.contrib.auth.decorators import login_required
 
@@ -15,18 +15,21 @@ def view_profile(request, id):
 @login_required(login_url='login')
 def edit_profile(request, id):
     data = models.CardUser.objects.get(id=id)
-    if request.method == 'POST':
-        data.name = request.POST['name']
-        data.designation = request.POST['designation']
-        data.about = request.POST['about']
-        data.phone_number = request.POST['phone_number']
-        data.email = request.POST['email']
-        data.address = request.POST['address']
+    if data.user == request.user:
+      if request.method == 'POST':
+          data.name = request.POST['name']
+          data.designation = request.POST['designation']
+          data.about = request.POST['about']
+          data.phone_number = request.POST['phone_number']
+          data.email = request.POST['email']
+          data.address = request.POST['address']
 
-        data.save()
+          data.save()
 
-    return render(request, 'User/editProfile.html', 
-      {
-        'data': data
-      }
-    )
+      return render(request, 'User/editProfile.html', 
+        {
+          'data': data
+        }
+      )
+    else:
+        return HttpResponse(404)
