@@ -121,12 +121,13 @@
                         <p>Login</p>
             
                         <div class="p-4">
-                            <form>
-                                <input type="text" placeholder="Username">
-                                <input type="password" placeholder="Password">
+                            <form action="{% url 'login' %}" method="post">
+                                {% csrf_token %}
+                                <input type="text" name="name" placeholder="Username">
+                                <input type="password" name="pass" placeholder="Password">
+                                <button class="loginBtn btn-block mt-5">Login</button>
                             </form>
             
-                            <button class="loginBtn btn-block mt-5">Login</button>
                         </div>
                     </div>
                 </div>
