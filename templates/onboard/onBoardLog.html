@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -73,6 +74,31 @@
 			</div>
 		</div>
 	</header>
+=======
+{% extends "index.html" %}
+{% load static %}
+{% block title %} Preface | Card On Board {% endblock title %}
+{% block cartactive  %}active{% endblock cartactive  %}
+
+{% block css %}
+<style>
+    .list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+</style>
+{% endblock css %}
+
+{% block body %}
+<!-- Title page -->
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url({% static 'images/bg-01.jpg'%});">
+    <h2 class="ltext-105 cl0 txt-center">
+        Active Card
+    </h2>
+</section>	
+>>>>>>> 6b44c6ad4d412b33feea4d62da8d6e7a3e487af1
 <section class="bg0 p-t-23 p-b-120">
     <div class="container">
         <div class="row">
@@ -145,6 +171,7 @@
         </div>
     </div>
 </section>	
+<<<<<<< HEAD
 <!-- Footer -->
 <footer class="bg3 p-t-75 p-b-32">
   <div class="container">
@@ -336,3 +363,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{% static 'js/main.js'%}"></script>
 </body>
 </html>
+=======
+
+{% endblock body %}
+
+{% block script %}
+{% endblock script %}
+>>>>>>> 6b44c6ad4d412b33feea4d62da8d6e7a3e487af1
