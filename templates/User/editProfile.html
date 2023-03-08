@@ -214,8 +214,9 @@
 				<a href="/"><img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO"></a>
 			</div>
 			<div class="btn-show-menu-mobile hamburger hamburger--squeeze ">
+
 				<span class="test">
-                    <a href="#" class="text-dark">Log Out</a>
+                	    <a href="{% url 'logout' %}" class="text-dark">Log Out</a>
 				</span>
 			</div>
 		</div>
@@ -230,7 +231,7 @@
 						<a href="/"><img class="prefacelogo" src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO"></a>
 					</div>
 					<div class="col-md-6 col-6 col-sm-6 text-right mt-2">
-						<a href="#" class="text-dark font-weight-bold">Log Out</a>
+                	    <a href="{% url 'logout' %}" class="text-dark">Log Out</a>
 					</div>
 				</div>
 			</div>
@@ -292,25 +293,28 @@
 				<div class="mt-4">
 					<h5 class="m-t-40 mb-4">Social Links</h5>
 					<div class="socialWrapper">
+						{% for i in links %}
 						<div class="inlineFiled social_parentDiv">
 							<div class="d-flex justify-content-start ">
 								<div class="p-2">
 									<label for="socialLinks">Social</label>
-									<select id="sname" name="sname">
-										<option value="facebook">facebook</option>
+									<select id="sname" name="sname" >
+										<option>{{social_name}}</option>
+										<option value="facebook">Facebook</option>
 										<option value="twitter">Twitter</option>
-										<option value="snapChat">SnapChat</option>
+										<option value="snapchat">Snapchat</option>
 										<option value="youtube">Youtube</option>
 									</select>
 								</div>
 								<div class="p-2 text-right">
 									<label for="name">Links</label>
-									<input type="text" value="https://www.facebook.com/sayem.sam">
-									<!-- <a href="#" type="button" class="text-light mr-2"><i class="fa fa-eye" style="font-size:20px;"></i></a>
-									<a href="#" type="button" class="text-light ml-2"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a> -->
+									<input type="text" name="slink" value="{{ i.social_link }}">
+									<a href="#" type="button" class="text-light mr-2"><i class="fa fa-eye" style="font-size:20px;"></i></a>
+									<a href="#" type="button" class="text-light ml-2"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a>
 								</div>
 							</div>
 						</div>
+						{% endfor %}
 					</div>
 						
 					<div class="container mt-4">
@@ -464,7 +468,7 @@
 		var maxField = 10; //Input fields increment limitation
 		var addSocialButton = $('#socialAddMore'); //Add button selector
 		var socialwrapper = $('.socialWrapper'); //Input field wrapper
-		var socialFieldsHTML = '<div class="inlineFiled social_parentDiv"><div class="d-flex justify-content-start"><div class="p-2"><label for="socialLinks">Social</label><select id="sname" name="sname"><option value="facebook">facebook</option><option value="twitter">Twitter</option><option value="snapChat">SnapChat</option><option value="youtube">Youtube</option></select></div><div class="p-2 text-right"><label for="name">Links</label><input type="text" value="https://www.facebook.com/sayem.sam"><a href="#" type="button" class="text-light mr-2"><i class="fa fa-eye" style="font-size:20px;"></i></a><a href="javascript:void(0);" class="text-light font-weight-bold removeSocial_button ml-2"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a></div></div></div>'; //New input field html 
+		var socialFieldsHTML = '<div class="inlineFiled social_parentDiv"><div class="d-flex justify-content-start"><div class="p-2"><label for="socialLinks">Social</label><select id="sname" name="sname"><option>Select One</option><option value="facebook">facebook</option><option value="twitter">Twitter</option><option value="snapChat">SnapChat</option><option value="youtube">Youtube</option></select></div><div class="p-2 text-right"><label for="name">Links</label><input type="text" name="slink"><a href="#" type="button" class="text-light mr-2"><i class="fa fa-eye" style="font-size:20px;"></i></a><a href="javascript:void(0);" class="text-light font-weight-bold removeSocial_button ml-2"> <i class="fa fa-trash-o" style="font-size:20px;"></i></a></div></div></div>'; //New input field html 
 		var x = 1; //Initial field counter is 1
 		
 		//Once add button is clicked

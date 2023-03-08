@@ -5,8 +5,10 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def view_profile(request, id):
     data = models.CardUser.objects.get(id=id)
+    social = models.SocialLinksIntems.objects.filter(card_user=data)
     return render(request, 'User/userProfile.html', 
       {
+        'links': social,
         'data': data,
         'auth': request.user.is_authenticated
       }
@@ -15,6 +17,7 @@ def view_profile(request, id):
 @login_required(login_url='login')
 def edit_profile(request, id):
     data = models.CardUser.objects.get(id=id)
+    social = models.SocialLinksIntems.objects.filter(card_user=data)
     if data.user == request.user:
       if request.method == 'POST':
           data.name = request.POST['name']
@@ -23,12 +26,20 @@ def edit_profile(request, id):
           data.phone_number = request.POST['phone_number']
           data.email = request.POST['email']
           data.address = request.POST['address']
-
           data.save()
+
+          social.delete()
+          for i in range(len(request.POST.getlist('sname'))):
+                model = models.SocialLinksIntems()
+                model.card_user = data
+                model.social_name = request.POST.getlist('sname')[i]
+                model.social_link = request.POST.getlist('slink')[i]
+                model.save()
 
       return render(request, 'User/editProfile.html', 
         {
-          'data': data
+          'data': data,
+          'links': social
         }
       )
     else:

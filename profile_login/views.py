@@ -7,7 +7,7 @@ def profile_login(request):
         user = authenticate(request, username=request.POST['name'], password=request.POST['pass'])
         if user is not None:
             login(request, user)
-            return redirect('editProfile', user.id)
+            return redirect('viewProfile', user.id)
         print(user)
     return render(request, 'Auth/userlogin.html')
 

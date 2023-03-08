@@ -10,8 +10,16 @@ class CardUser(models.Model):
     phone_number = models.CharField(max_length=11, null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
     address = models.CharField(max_length=400, null=True, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pictures/')
+    profile_picture = models.ImageField(upload_to='profile_pictures')
     cover_picture = models.ImageField(upload_to='cover_pictures')
 
     def __str__(self):
         return self.name
+    
+class SocialLinksIntems(models.Model):
+    card_user = models.ForeignKey(CardUser, on_delete=models.CASCADE)
+    social_name = models.CharField(max_length=400, null=True, blank=True)
+    social_link = models.CharField(max_length=600, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.card_user} - {self.social_name}"
