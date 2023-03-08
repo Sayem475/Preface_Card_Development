@@ -33,3 +33,9 @@ def edit_profile(request, id):
       )
     else:
         return HttpResponse(404)
+  
+def profile_onboard_log(request):
+    return render(request, 'Onboard/onBoard.html')
+
+def profile_onboard(request, id):
+    return render(request, 'Onboard/onBoard.html')

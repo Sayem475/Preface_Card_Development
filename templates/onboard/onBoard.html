@@ -1,16 +1,33 @@
 {% extends "index.html" %}
 {% load static %}
-{% block title %} Preface | Card On Board {% endblock title %}
-{% block cartactive  %}active{% endblock cartactive  %}
+{% block title %} Preface | Confirm Card {% endblock title %}
+{% block active  %}active{% endblock active  %}
 
 {% block css %}
 <style>
-    .list-group-item.active {
-    z-index: 2;
-    color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
+      .activeCardbtn {
+    color: white;
+    background: red;
+    padding: 10px;
+    border-radius: 21px;
+    font-weight: bold;
+    font-size: 17px;
+    }
+    .activeCardbtn:hover {
+    color: black;
+    background: white;
+    padding: 10px;
+    border-radius: 21px;
+    font-weight: bold;
+    font-size: 17px;
+    }
+    .cardPagebody{
+        background: black;
+        color: white;
+    }
+    .cardPagebody h5{
+        margin-bottom: 8px;
+    }
 </style>
 {% endblock css %}
 
@@ -21,79 +38,20 @@
         Active Card
     </h2>
 </section>	
-<section class="bg0 p-t-23 p-b-120">
-    <div class="container">
-        <div class="row">
-            <!-- SIDE BAR CARD ON BOARD -->
-            <div class="col-sm-3">
-                <div class="list-group p-3 mt-2">
-                    <a href="#" class="list-group-item list-group-item-action active">
-                        Card On Boarding
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">Card Active</a>
-                    <a href="#" class="list-group-item list-group-item-action">Active</a>
-                    <a href="#" class="list-group-item list-group-item-action disabled">Disabled</a>
-                  </div>
-            </div>
-            <!-- TABLE FOR CARD BOARDING  -->
-            <div class="col-sm-9 ">
-              <div class="container table-responsive p-3 mt-2">
-                <table class="table table-bordered table-sm text-center table-striped ">
-                    <thead >
-                      <tr >
-                        <th scope="col" class="text-center">Sl</th>
-                        <th scope="col" class="text-center">Customer Name</th>
-                        <th scope="col" class="text-center">Order Id</th>
-                        <th scope="col" class="text-center">Order Date</th>
-                        <th scope="col" class="text-center">Due Date</th>
-                        <th scope="col" class="text-center">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row" class="text-center">1</th>
-                        <td>Sayem</td>
-                        <td>0001</td>
-                        <td>27-09-22</td>
-                        <td>28-09-22</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Action
-                                </button>
-                                <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{% url 'confirmcard' %}">Card On Board</a>
-                                <a class="dropdown-item" href="#">Cancel Card</a>
-                                </div>
-                            </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" class="text-center" >2</th>
-                        <td>Risalat</td>
-                        <td>0002</td>
-                        <td>27-09-22</td>
-                        <td>28-09-22</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Action
-                                </button>
-                                <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{% url 'confirmcard' %}">Card On Board</a>
-                                <a class="dropdown-item" href="#">Cancel Card</a>
-                                </div>
-                            </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
+    <section class="bg0 p-t-23 p-b-120 cardPagebody">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6 p-4">
+                    <h5><strong>Custome Name:</strong> Md Sayem Uddin</h5>
+                    <h5><strong>Order Id:</strong> 0001</h5>
+                    <h5><strong>Card Serial Number:</strong> SL09F932Y </h5>
+                    <button class="activeCardbtn mt-3"Confirm Card></button>
+                </div>
+                <div class="col-sm-3"></div>
             </div>
         </div>
-    </div>
-</section>	
-
+    </section>	
 {% endblock body %}
 
 {% block script %}

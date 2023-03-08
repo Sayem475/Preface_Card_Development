@@ -3,5 +3,7 @@ from . import views
 
 urlpatterns = [
     path('<int:id>', views.view_profile, name='view_profile'),
-    path('edit/<int:id>', views.edit_profile, name='editProfile')
+    path('edit/<int:id>', views.edit_profile, name='editProfile'),
+    path('admin/onboard', views.profile_onboard_log, name='onboardLog'),
+    path('admin/onboard/<int:id>', views.profile_onboard, name='onBoard')
 ]
