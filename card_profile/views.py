@@ -46,11 +46,7 @@ def edit_profile(request, id):
         return HttpResponse(404)
   
 def profile_onboard_log(request):
-<<<<<<< HEAD
-    return render(request, 'Onboard/onBoard.html')
-=======
     return render(request, 'Onboard/onBoardLog.html')
->>>>>>> 6b44c6ad4d412b33feea4d62da8d6e7a3e487af1
 
 def profile_onboard(request, id):
     return render(request, 'Onboard/onBoard.html')
