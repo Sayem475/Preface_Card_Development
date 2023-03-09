@@ -1,80 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-	<title>PREFACE | User Profile</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png'%}"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css'%}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/linearicons-v1.0.0/icon-font.min.css'%}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css'%}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css'%}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css'%}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css'%}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css'%}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css'%}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
-
-<!--===============================================================================================-->
-<style></style>
-</head>
-<body class="animsition">
-    <header class="header-v2" >
-		<!-- Header desktop -->
-		<div class="container-menu-desktop trans-03">
-			<div class="wrap-menu-desktop">
-				<nav class="limiter-menu-desktop p-l-45">
-					<!-- Logo desktop -->		
-					<a href="/" class="logo">
-						<img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO">
-					</a>
-					<!-- Menu desktop -->
-					<div class="menu-desktop">
-						<ul class="main-menu">
-							<li class="active-menu">
-								<a href="#">Home</a>
-							</li>
-
-							<li >
-								<a href="#">Shop</a>
-							</li>
-						</ul>
-					</div>		
-				</nav>
-			</div>	
-		</div>
-
-		<!-- Header Mobile -->
-		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->		
-			<div class="logo-mobile">
-				<a href="#"><img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO"></a>
-			</div>
-
-			<!-- Button show menu -->
-			<div class="btn-show-menu-mobile hamburger hamburger--squeeze ">
-				<span class="test">
-                    <a href="#" >SHOP</a>
-				</span>
-			</div>
-		</div>
-	</header>
-=======
 {% extends "index.html" %}
 {% load static %}
 {% block title %} Preface | Card On Board {% endblock title %}
@@ -98,7 +21,6 @@
         Active Card
     </h2>
 </section>	
->>>>>>> 6b44c6ad4d412b33feea4d62da8d6e7a3e487af1
 <section class="bg0 p-t-23 p-b-120">
     <div class="container">
         <div class="row">
@@ -312,6 +234,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
   </div>
 </footer>
+{% endblock body %}
 
 <!-- Back to top -->
 <div class="btn-back-to-top" id="myBtn">
