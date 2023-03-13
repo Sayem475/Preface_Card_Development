@@ -23,3 +23,22 @@ class SocialLinksIntems(models.Model):
 
     def __str__(self):
         return f"{self.card_user} - {self.social_name}"
+    
+class SkillsIntems(models.Model):
+    card_user = models.ForeignKey(CardUser, on_delete=models.CASCADE)
+    skill = models.CharField(max_length=400, default=None, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.card_user} - {self.skill}"
+
+class ProfessionalItems(models.Model):
+    card_user = models.ForeignKey(CardUser, on_delete=models.CASCADE)
+    designation = models.CharField(max_length=400, default=None, null=True, blank=True)
+    company_name = models.CharField(max_length=400, default=None, null=True, blank=True)
+    work_from = models.DateField(null=True)
+    work_to = models.DateField(null=True)
+    location = models.CharField(max_length=500, default=None, null=True, blank=True)
+    currently_work_here = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.card_user} - {self.company_name}"

@@ -402,22 +402,12 @@
 				<!-- SKILLS INFORMATION  -->
 				<div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
 					<div class="skills">
+						{% for i in skills %}
 						<p class="mb-1"> 
 							<span class="dot"></span> 
-							Problem Solving
+							{{ i.skill }}
 						</p>
-						<p class="mb-1"> 
-							<span class="dot"></span> 
-							Web Designing
-						</p>
-						<p class="mb-1"> 
-							<span class="dot"></span>  
-							Software Development
-						</p>
-						<p class="mb-1"> 
-							<span class="dot"></span>  
-							Graphics Design
-						</p>
+						{% endfor %}
 					</div>
 				</div>
 			  </div>
