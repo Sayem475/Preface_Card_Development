@@ -227,7 +227,7 @@
 						<a href="#" class="mybtn">Save Contact</a>
 					</div>
 					<div class="p-2">
-						<a href="#" class="mybtn" data-toggle="modal" data-target="#exampleModal" >Connect</a>
+						<a href="{% url 'connect'%}" class="mybtn">Connect</a>
 					</div>
 				</div>
 			</div>
@@ -351,7 +351,6 @@
 		{% if auth %}
 		<div class="container mt-5 text-center">
 			<a href="http://127.0.0.1:8000/profile/edit/{{ data.id }}" class="btn btn-danger">Edit Profile</a>
-			<!-- <a href="{% url '' data.id %}" class="btn btn-danger">Edit Profile</a> -->
 		</div>
 		{% endif %}
 

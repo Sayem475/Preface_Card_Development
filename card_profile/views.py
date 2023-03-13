@@ -74,3 +74,6 @@ def profile_onboard_log(request):
 
 def profile_onboard(request, id):
     return render(request, 'Onboard/onBoard.html')
+
+def connect(request):
+    return render(request, 'User/connect.html')
