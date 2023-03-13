@@ -211,18 +211,30 @@
 		<div class="wrap-header-mobile text-center">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="/"><img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO"></a>
+				<a href="#"><img src="{% static 'images/icons/pre-black.png'%}" alt="IMG-LOGO"></a>
 			</div>
 			<div class="btn-show-menu-mobile hamburger hamburger--squeeze ">
 
 				<span class="test">
-                	    <a href="{% url 'logout' %}" class="text-dark">Log Out</a>
+                	    <a href="javascript:history.back()" class="text-dark">Go Back</a>
 				</span>
 			</div>
 		</div>
 	</header>
-
+	
     <section class="pb-5 editForm" style="background: black; color: white;">
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<strong>Successfully Updated!
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<strong>Something Wrong!
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		</div>
 		<!-- NAVIGATION FOR DESKTOP  -->
 		<div class="navigation" style="background-color:white; color:black; font-weight:bold;">
 			<div class="container p-3">
