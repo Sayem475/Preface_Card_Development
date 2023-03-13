@@ -174,6 +174,20 @@
 			border-radius: 50%;
 			display: inline-block;
 			}
+			input[type=text] {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: none;
+				border-bottom: 2px solid red;
+				background-color: #272626;
+				color: white;
+			}
+
+			input[type=text]:hover {
+				border-bottom: 2px solid white;
+			}
 
 		img.prefacelogo{
 			width: 50%;
@@ -266,7 +280,7 @@
 						<a href="#" class="mybtn">Save Contact</a>
 					</div>
 					<div class="p-2">
-						<a href="#" class="mybtn" >Connect</a>
+						<a href="#" class="mybtn" data-toggle="modal" data-target="#exampleModal" >Connect</a>
 					</div>
 				</div>
 			</div>
@@ -423,6 +437,40 @@
 			<a href="http://127.0.0.1:8000/profile/edit/{{ data.id }}" class="btn btn-danger">Edit Profile</a>
 		</div>
 		{% endif %}
+
+
+		<!-- CONNECT MODAL  -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content" style="background-color: black; color:white;">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Share your contact!</h5>
+					<button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="recipient-name" class="col-form-label">Hello Sayem, My name is...</label>
+							<input type="text" id="recipient-name" placeholder="Your Name">
+						</div>
+						<div class="form-group">
+							<label for="recipient-email" class="col-form-label">You can reach me at...</label>
+							<input type="text" id="recipient-email" placeholder="Email Address">
+						</div>
+						<div class="form-group">
+							<label for="recipient-phone" class="col-form-label">Contact number...</label>
+							<input type="text" id="recipient-number" placeholder="+880 ...">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger btn-block">Send</button>
+				</div>
+				</div>
+			</div>
+		</div>
 	
     </section>
 
